@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nanocredi Afrique</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f3f4f7;
+padding:20px;
+}
+
+.phone{
+max-width:420px;
+margin:auto;
+background:white;
+border-radius:30px;
+padding:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.top{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:25px;
+}
+
+.logo{
+width:55px;
+height:55px;
+border-radius:50%;
+background:#0b7a35;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:22px;
+font-weight:bold;
+}
+
+.top h1{
+font-size:22px;
+color:#0b7a35;
+}
+
+.card{
+background:#0b7a35;
+color:white;
+padding:20px;
+border-radius:20px;
+margin-bottom:25px;
+}
+
+.card h2{
+font-size:28px;
+margin-top:10px;
+}
+
+.card p{
+opacity:0.9;
+margin-top:5px;
+}
+
+.welcome{
+text-align:center;
+margin-bottom:25px;
+}
+
+.welcome h3{
+font-size:28px;
+color:#0b7a35;
+margin-bottom:8px;
+}
+
+.welcome p{
+color:#666;
+}
+
+.box{
+background:white;
+border:1px solid #e4e4e4;
+border-radius:20px;
+padding:20px;
+}
+
+.box h4{
+font-size:26px;
+color:#0b7a35;
+margin-bottom:20px;
+}
+
+label{
+display:block;
+margin-bottom:8px;
+font-weight:600;
+color:#333;
+}
+
+select,
+input{
+width:100%;
+padding:16px;
+border-radius:14px;
+border:1px solid #ccc;
+margin-bottom:18px;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:18px;
+border:none;
+border-radius:15px;
+background:#0b7a35;
+color:white;
+font-size:18px;
+font-weight:600;
+cursor:pointer;
+}
+
+.message{
+margin-top:20px;
+padding:18px;
+background:#eef8f0;
+border-radius:16px;
+display:none;
+}
+
+.message h5{
+color:#0b7a35;
+font-size:18px;
+margin-bottom:10px;
+}
+
+.message p{
+color:#333;
+line-height:1.5;
+}
+
+.fee{
+margin-top:15px;
+background:#ffe9b3;
+padding:14px;
+border-radius:12px;
+text-align:center;
+font-weight:700;
+color:#d98b00;
+}
+
+.footer{
+margin-top:25px;
+text-align:center;
+color:#777;
+font-size:14px;
+}
+</style>
+</head>
+<body>
+
+<div class="phone">
+
+<div class="top">
+<div class="logo">N</div>
+<h1>Nanocredi Afrique</h1>
+</div>
+
+<div class="card">
+<p>Bienvenue</p>
+<h2>Jean Kouadio</h2>
+<p>Solde disponible</p>
+<h2>1.250.000 FCFA</h2>
+</div>
+
+<div class="welcome">
+<h3>Bienvenue 👋</h3>
+<p>Bienvenue sur Nanocredi Afrique</p>
+</div>
+
+<div class="box">
+<h4>Retirer</h4>
+
+<label>Moyen de retrait</label>
+<select>
+<option>MTN Mobile Money</option>
+<option>Moov Money</option>
+<option>Wave</option>
+<option>Orange Money</option>
+</select>
+
+<label>Montant à retirer</label>
+<input type="text" id="amount" placeholder="Entrez le montant">
+
+<button onclick="showMessage()">Retirer</button>
+
+<div class="message" id="message">
+<h5>Demande envoyée avec succès</h5>
+<p id="result"></p>
+<div class="fee">Frais de service : 13.400 FCFA</div>
+</div>
+</div>
+
+<div class="footer">
+Nanocredi Afrique © 2026
+</div>
+
+</div>
+
+<script>
+function showMessage(){
+let amount = document.getElementById('amount').value;
+
+if(amount === ''){
+alert('Veuillez entrer un montant');
+return;
+}
+
+document.getElementById('message').style.display='block';
+document.getElementById('result').innerHTML =
+'Votre demande de retrait de <b>' + amount + ' FCFA</b> a été enregistrée avec succès.';
+}
+</script>
+
+</body>
+  </html>
