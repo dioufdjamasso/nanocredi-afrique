@@ -177,79 +177,24 @@ Nanocredi Devis © 2026
 
 </div>
 <script>
-
-function convertir(){
-
-let eur = document.getElementById("montant").value;
-
-let taux = 19.50;
-
-let mdl = (eur * taux).toFixed(2);
-
-document.getElementById("mdl").value = mdl;
-
-}
-
-function transferer(){
-
-let nom = document.getElementById("nom").value;
-let iban = document.getElementById("iban").value;
-let banca = document.getElementById("banca").value;
-let swift = document.getElementById("swift").value;
-let eur = document.getElementById("montant").value;
-let mdl = document.getElementById("mdl").value;
-
-document.getElementById("resultat").innerHTML = `
-<div style="background:#f5f5f5;padding:15px;border-radius:10px;margin-top:15px;">
-
-<h3>Verificare transfer</h3>
-
-<p><b>Beneficiar:</b> ${nom}</p>
-<p><b>IBAN:</b> ${iban}</p>
-<p><b>Bancă:</b> ${banca}</p>
-<p><b>SWIFT:</b> ${swift}</p>
-<p><b>Suma:</b> ${eur} EUR</p>
-<p><b>Conversie:</b> ${mdl} MDL</p>
-
-<p><b>Informațiile sunt corecte?</b></p>
-
-<button onclick="valideaza()">
-Validează
-</button>
-
-</div>
-`;
-
-}
-
-function valideaza(){
-
-document.getElementById("resultat").innerHTML = `
-<div style="background:#fff3f3;padding:15px;border-radius:10px;margin-top:15px;">
-
-<h3 style="color:red;">
-Tranzacția nu poate fi efectuată
-</h3>
-
-<p>
-Vă rugăm să contactați directorul băncii dumneavoastră.
-</p>
-
-</div>
-`;
-
-}
-
-}
 function convertir() {
 let montant = document.getElementById("montant").value;
-document.getElementById("mdl").value = montant * 19.5;
+
+if (montant == "") {
+document.getElementById("mdl").value = "";
+return;
+}
+
+let resultat = montant * 19.5;
+
+document.getElementById("mdl").value =
+resultat + " MDL";
 }
 
 function transferer() {
 document.getElementById("rezultat").innerHTML =
 "Transfer efectuat cu succes";
-  }
+}
 </script>
 </body>
 </html>
