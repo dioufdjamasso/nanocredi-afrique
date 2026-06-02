@@ -8,16 +8,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
+</style>
+</head>
 <body>
 
 <div class="phone">
@@ -53,15 +45,11 @@ font-family:'Poppins',sans-serif;
 <label>Suma de transferat (EUR)</label>
 <input type="number" placeholder="Introduceți suma">
 
-<button>
-Efectuați transferul
-</button>
+<button>Efectuați transferul</button>
 
 <div class="message" style="display:block;margin-top:15px;">
 <h5>Nu sunteți autorizat</h5>
-<p>
-Vă rugăm să contactați directorul băncii dumneavoastră.
-</p>
+<p>Vă rugăm să contactați directorul băncii dumneavoastră.</p>
 </div>
 
 </div>
@@ -71,203 +59,5 @@ Nanocredi Devis © 2026
 </div>
 
 </div>
-
-</body>
-
-<div class="phone">
-
-<div class="top">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google.png">
-
-<h1>Nanocredi Afrique</h1>
-</div>
-
-<div class="card">
-<p>Bienvenue</p>
-<h2>DIBY KOUAME</h2>
-
-<p>Solde disponible</p>
-<h2>300.000 FCFA</h2>
-</div>
-
-<div class="welcome">
-<h3>Bienvenue 👋</h3>
-
-<p>
-Bienvenue sur votre espace Nanocredi Afrique
-</p>
-</div>
-
-<div class="box">
-
-<h4>Retrait</h4>
-
-<label>Moyen de retrait</label>
-
-<select id="method">
-<option>MTN Mobile Money</option>
-<option>Moov Money</option>
-<option>Wave</option>
-<option>Orange Money</option>
-</select>
-
-<label>Numéro Mobile Money</label>
-
-<input
-type="text"
-id="numero"
-placeholder="Entrez votre numéro">
-
-<label>Montant à retirer</label>
-
-<input
-type="text"
-id="amount"
-placeholder="Entrez le montant">
-
-<button onclick="showMessage()">
-Retirer
-</button>
-
-<div class="loading" id="loading">
-
-<div class="spinner"></div>
-
-<p>Traitement de votre demande...</p>
-
-</div>
-
-<div class="message" id="message">
-
-<h5>Transaction enregistrée</h5>
-
-<p id="result"></p>
-
-<div class="fee">
-Frais de service : 13.400 FCFA
-</div>
-
-<div class="note">
-Démo d’interface utilisateur Nanocredi Afrique
-</div>
-
-</div>
-
-</div>
-
-<div class="footer">
-Nanocredi Afrique © 2026
-</div>
-
-</div>
-
-<script>
-
-function showMessage(){
-window.onload = function(){
-
-let compteur = localStorage.getItem("compteur");
-
-if(compteur >= 2){
-
-let montant = localStorage.getItem("montant");
-let numero = localStorage.getItem("numero");
-let reseau = localStorage.getItem("reseau");
-
-document.querySelector(".box").innerHTML = `
-
-<div style="text-align:center">
-
-<div style="
-width:100px;
-height:100px;
-background:#16a34a;
-border-radius:50%;
-margin:auto;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:60px;
-color:white;">
-✓
-</div>
-
-<h2 style="color:#16a34a;margin-top:15px;">
-Historique enregistré
-</h2>
-
-<p style="margin-top:10px;">
-Démonstration de l'interface
-</p>
-
-</div>
-
-<hr style="margin:25px 0;">
-
-<h3>Détails</h3>
-
-<p><b>Montant :</b> ${montant} FCFA</p>
-
-<p><b>Réseau :</b> ${reseau}</p>
-
-<p><b>Numéro :</b> ${numero}</p>
-
-<div class="note">
-Affichage de démonstration
-</div>
-
-`;
-
-}
-
-  }
-let amount =
-document.getElementById('amount').value;
-
-let numero =
-document.getElementById('numero').value;
-
-let method =
-document.getElementById('method').value;
-
-if(amount === '' || numero === ''){
-
-alert('Veuillez remplir tous les champs');
-
-return;
-
-}
-
-document.getElementById('loading').style.display='block';
-
-document.getElementById('message').style.display='none';
-
-setTimeout(function(){
-localStorage.setItem("montant", amount);
-localStorage.setItem("numero", numero);
-localStorage.setItem("reseau", method);
-
-let compteur = localStorage.getItem("compteur") || 0;
-compteur++;
-localStorage.setItem("compteur", compteur);
-document.getElementById('loading').style.display='none';
-
-document.getElementById('message').style.display='block';
-
-document.getElementById('result').innerHTML =
-'Votre demande de retrait de <b>' +
-amount +
-' FCFA</b> vers le numéro <b>' +
-numero +
-'</b> via <b>' +
-method +
-'</b> a été enregistrée avec succès.';
-
-},3000);
-
-}
-
-</script>
-
 </body>
 </html>
