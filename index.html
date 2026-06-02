@@ -18,191 +18,61 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
-body{
-background:#f3f4f7;
-padding:20px;
-}
-
-.phone{
-max-width:420px;
-margin:auto;
-background:white;
-border-radius:30px;
-padding:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
-
-.top{
-display:flex;
-align-items:center;
-gap:12px;
-margin-bottom:25px;
-}
-
-.top img{
-width:60px;
-height:60px;
-border-radius:50%;
-object-fit:cover;
-}
-
-.top h1{
-font-size:24px;
-color:#0b7a35;
-}
-
-.card{
-background:linear-gradient(135deg,#0b7a35,#13a54a);
-color:white;
-padding:22px;
-border-radius:22px;
-margin-bottom:25px;
-}
-
-.card p{
-opacity:0.9;
-}
-
-.card h2{
-font-size:30px;
-margin-top:8px;
-margin-bottom:8px;
-}
-
-.welcome{
-text-align:center;
-margin-bottom:25px;
-}
-
-.welcome h3{
-font-size:30px;
-color:#0b7a35;
-margin-bottom:10px;
-}
-
-.welcome p{
-color:#666;
-}
-
-.box{
-background:white;
-border:1px solid #e4e4e4;
-border-radius:22px;
-padding:22px;
-}
-
-.box h4{
-font-size:28px;
-color:#0b7a35;
-margin-bottom:22px;
-}
-
-label{
-display:block;
-margin-bottom:8px;
-font-weight:600;
-color:#333;
-}
-
-select,
-input{
-width:100%;
-padding:16px;
-border-radius:14px;
-border:1px solid #ccc;
-margin-bottom:18px;
-font-size:16px;
-outline:none;
-}
-
-button{
-width:100%;
-padding:18px;
-border:none;
-border-radius:15px;
-background:#0b7a35;
-color:white;
-font-size:18px;
-font-weight:600;
-cursor:pointer;
-transition:0.3s;
-}
-
-button:hover{
-background:#095f29;
-}
-
-.loading{
-display:none;
-margin-top:20px;
-text-align:center;
-color:#0b7a35;
-font-weight:600;
-}
-
-.spinner{
-width:45px;
-height:45px;
-border:5px solid #d7f5df;
-border-top:5px solid #0b7a35;
-border-radius:50%;
-margin:auto;
-animation:spin 1s linear infinite;
-margin-bottom:15px;
-}
-
-@keyframes spin{
-0%{transform:rotate(0deg);}
-100%{transform:rotate(360deg);}
-}
-
-.message{
-margin-top:20px;
-padding:18px;
-background:#eef8f0;
-border-radius:16px;
-display:none;
-}
-
-.message h5{
-color:#0b7a35;
-font-size:20px;
-margin-bottom:10px;
-}
-
-.message p{
-color:#333;
-line-height:1.6;
-}
-
-.fee{
-margin-top:15px;
-background:#ffe9b3;
-padding:14px;
-border-radius:12px;
-text-align:center;
-font-weight:700;
-color:#d98b00;
-}
-
-.note{
-margin-top:15px;
-font-size:14px;
-color:#777;
-text-align:center;
-}
-
-.footer{
-margin-top:30px;
-text-align:center;
-color:#777;
-font-size:14px;
-}
-
-</style>
-</head>
-
 <body>
+
+<div class="phone">
+
+<div class="top">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google.png">
+<h1>Nanocredi Devis</h1>
+</div>
+
+<div class="card">
+<p>Bine ai venit</p>
+<h2>MORARU NICOLAE</h2>
+<p>Sold disponibil</p>
+<h2>500 000 EUR</h2>
+</div>
+
+<div class="box">
+
+<h4>Transfer către un cont bancar</h4>
+
+<label>Numele beneficiarului</label>
+<input type="text" placeholder="Introduceți numele">
+
+<label>IBAN-ul beneficiarului</label>
+<input type="text" placeholder="Introduceți IBAN-ul">
+
+<label>Numele băncii</label>
+<input type="text" placeholder="Introduceți banca">
+
+<label>Cod SWIFT / BIC</label>
+<input type="text" placeholder="Introduceți codul">
+
+<label>Suma de transferat (EUR)</label>
+<input type="number" placeholder="Introduceți suma">
+
+<button>
+Efectuați transferul
+</button>
+
+<div class="message" style="display:block;margin-top:15px;">
+<h5>Nu sunteți autorizat</h5>
+<p>
+Vă rugăm să contactați directorul băncii dumneavoastră.
+</p>
+</div>
+
+</div>
+
+<div class="footer">
+Nanocredi Devis © 2026
+</div>
+
+</div>
+
+</body>
 
 <div class="phone">
 
