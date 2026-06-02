@@ -177,7 +177,9 @@ Nanocredi Devis © 2026
 
 </div>
 <script>
+
 function convertir() {
+
 let montant = document.getElementById("montant").value;
 
 if (montant == "") {
@@ -189,14 +191,64 @@ let resultat = montant * 19.5;
 
 document.getElementById("mdl").value =
 resultat + " MDL";
+
 }
 
 function transferer() {
 
-document.getElementById("rezultat").innerHTML =
-"Transfer efectuat cu succes";
+let nume = document.getElementById("nom").value;
+let iban = document.getElementById("iban").value;
+let banca = document.getElementById("banca").value;
+let swift = document.getElementById("swift").value;
+let mdl = document.getElementById("mdl").value;
+
+document.getElementById("rezultat").innerHTML = `
+
+<div style="background:#f3f3f3;padding:15px;border-radius:10px;margin-top:15px;">
+
+<h3 style="color:green;">Transfer pregătit</h3>
+
+<p><b>Beneficiar:</b> ${nume}</p>
+
+<p><b>IBAN:</b> ${iban}</p>
+
+<p><b>Banca:</b> ${banca}</p>
+
+<p><b>SWIFT:</b> ${swift}</p>
+
+<p><b>Suma:</b> ${mdl}</p>
+
+<button onclick="valideaza()"
+style="margin-top:15px;padding:12px;width:100%;background:#0b6b36;color:white;border:none;border-radius:10px;">
+
+Validează
+
+</button>
+
+<div id="confirmare"></div>
+
+</div>
+
+`;
 
 }
+
+function valideaza() {
+
+document.getElementById("confirmare").innerHTML = `
+
+<div style="background:#ffeaea;padding:15px;border-radius:10px;margin-top:15px;color:#c00;">
+
+<h4>Nu sunteți încă autorizat să efectuați tranzacția.</h4>
+
+<p>Vă rugăm să contactați directorul băncii.</p>
+
+</div>
+
+`;
+
+}
+
 </script>
 </body>
 </html>
