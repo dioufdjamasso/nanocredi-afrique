@@ -144,9 +144,25 @@ color:#666;
 <input type="text" placeholder="Introduceți codul">
 
 <label>Suma de transferat (EUR)</label>
-<input type="number" placeholder="Introduceți suma">
 
-<button>Efectuați transferul</button>
+<input
+type="number"
+id="montant"
+oninput="convertir()"
+placeholder="Introduceți suma">
+
+<label>Suma convertita (MDL)</label>
+
+<input
+type="text"
+id="mdl"
+readonly>
+
+<button onclick="transferer()">
+Efectuați transferul
+</button>
+
+<div id="resultat"></div>
 
 <div class="message">
 <h5>Nu sunteți autorizat</h5>
@@ -160,6 +176,46 @@ Nanocredi Devis © 2026
 </div>
 
 </div>
+<script>
 
+function convertir(){
+
+let eur = document.getElementById("montant").value;
+
+let taux = 19.50;
+
+let mdl = (eur * taux).toFixed(2);
+
+document.getElementById("mdl").value = mdl;
+
+}
+
+function transferer(){
+
+let eur = document.getElementById("montant").value;
+
+let mdl = document.getElementById("mdl").value;
+
+let confirmation = confirm(
+"Montant : " + eur + " EUR\n\n" +
+"Conversion : " + mdl + " MDL\n\n" +
+"Ces informations sont-elles correctes ?"
+);
+
+if(confirmation){
+
+document.getElementById("resultat").innerHTML = `
+<div style="background:#e8fff0;padding:15px;border-radius:10px;margin-top:15px;">
+<h3 style="color:green;">✅ Transaction sécurisée</h3>
+<p>Montant : ${eur} EUR</p>
+<p>Conversion : ${mdl} MDL</p>
+</div>
+`;
+
+}
+
+}
+
+</script>
 </body>
 </html>
