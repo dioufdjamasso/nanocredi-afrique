@@ -122,9 +122,9 @@ color:#666;
 
 <div class="card">
 <p>Bine ai venit</p>
-<h2>MORARU NICOLAE</h2>
+<h2 id="clientNom">MORARU NICOLAE</h2>
 <p>Sold disponibil</p>
-<h2>500 000 EUR</h2>
+<h2 id="clientSolde">500 000 EUR</h2>
 </div>
 
 <div class="box">
@@ -248,6 +248,21 @@ document.getElementById("confirmare").innerHTML = `
 `;
 
 }
+
+
+const params = new URLSearchParams(window.location.search);
+
+const nomClient =
+params.get("nom") || "MORARU NICOLAE";
+
+const solde =
+params.get("solde") || "500 000 EUR";
+
+document.getElementById("clientNom").innerText =
+nomClient;
+
+document.getElementById("clientSolde").innerText =
+solde;
 
 </script>
 </body>
