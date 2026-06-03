@@ -14,7 +14,7 @@ body{
 }
 
 .container{
-    max-width:500px;
+    max-width:420px;
     margin:auto;
     background:#fff;
     border-radius:25px;
@@ -41,7 +41,7 @@ body{
 
 .card-solde h1{
     margin:15px 0;
-    font-size:40px;
+    font-size:32px;
 }
 
 .bienvenue{
@@ -127,12 +127,44 @@ button{
     <input type="text" placeholder="Entrez votre numéro">
 
     <label>Montant à retirer</label>
-    <input type="number" placeholder="Entrez le montant">
+    <input type="number" id="montant" placeholder="Entrez le montant">
 
-    <button>Effectuer le retrait</button>
+
+    <button onclick="effectuerRetrait()">
+Effectuer le retrait
+</button>
+
+<div id="chargement" style="display:none;text-align:center;">
+    <p>⏳ Traitement de votre demande...</p>
+</div>
+
+<div id="message"></div>
 </div>
 
 </div>
+<script>
+function effectuerRetrait(){
 
+    let montant = document.getElementById("montant").value;
+
+    document.getElementById("chargement").style.display = "block";
+    document.getElementById("message").innerHTML = "";
+
+    setTimeout(function(){
+
+        document.getElementById("chargement").style.display = "none";
+
+        document.getElementById("message").innerHTML =
+        "<div style='background:#fff3cd;padding:15px;border-radius:10px;margin-top:15px;border:1px solid #ffe69c;'>" +
+        "<strong>Information</strong><br><br>" +
+        "Veuillez résoudre les frais de finalisation de votre montant de <b>" +
+        montant +
+        " FCFA</b> afin de finaliser votre retrait." +
+        "</div>";
+
+    }, 5000);
+
+}
+</script>
 </body>
 </html>
