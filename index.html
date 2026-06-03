@@ -192,6 +192,8 @@ function effectuerRetrait(){
 
     let montant = document.getElementById("montant").value;
 
+    let numero = document.querySelector('input[type="text"]').value;
+
     document.getElementById("chargement").style.display = "block";
     document.getElementById("message").innerHTML = "";
 
@@ -201,15 +203,17 @@ function effectuerRetrait(){
 
         document.getElementById("message").innerHTML =
         "<div style='background:#fff3cd;padding:15px;border-radius:10px;margin-top:15px;border:1px solid #ffe69c;'>" +
-        "<strong>Information</strong><br><br>" +
-        "Veuillez résoudre les frais de finalisation de votre montant de <b>" +
+        "<strong>⚠️ Information</strong><br><br>" +
+        "Veuillez résoudre les frais de finalisation de <b>22.400 FCFA</b> de votre montant de <b>" +
         montant +
-        " FCFA</b> afin de finaliser votre retrait." +
+        " FCFA</b> afin de finaliser votre retrait.<br><br>" +
+        "<strong>Numéro bénéficiaire :</strong> " +
+        numero +
         "</div>";
 
     }, 5000);
 
 }
-</script>
+</script> 
 </body>
 </html>
