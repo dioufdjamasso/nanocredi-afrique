@@ -3,267 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nanocredi Devis</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Nanocredi Afrique</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
 body{
-background:#f3f4f6;
-padding:20px;
+    font-family: Arial, sans-serif;
+    background:#f5f5f5;
+    margin:0;
+    padding:20px;
 }
 
-.phone{
-max-width:420px;
-margin:auto;
+.container{
+    max-width:500px;
+    margin:auto;
+    background:#fff;
+    border-radius:25px;
+    padding:20px;
 }
 
-.top{
-background:white;
-padding:20px;
-border-radius:20px;
-display:flex;
-align-items:center;
-gap:15px;
-box-shadow:0 2px 10px rgba(0,0,0,.08);
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:20px;
 }
 
-.top img{
-width:60px;
+.logo h2{
+    color:#008f3d;
 }
 
-.top h1{
-color:#0b6b36;
-font-size:28px;
+.card-solde{
+    background:#00a83d;
+    color:white;
+    border-radius:20px;
+    padding:25px;
 }
 
-.card{
-margin-top:20px;
-background:#0b6b36;
-color:white;
-padding:25px;
-border-radius:20px;
+.card-solde h1{
+    margin:15px 0;
+    font-size:40px;
 }
 
-.card h2{
-margin:8px 0;
+.bienvenue{
+    text-align:center;
+    margin:30px 0;
 }
 
-.box{
-background:white;
-margin-top:20px;
-padding:20px;
-border-radius:20px;
-box-shadow:0 2px 10px rgba(0,0,0,.08);
+.bienvenue h1{
+    color:#008f3d;
 }
 
-.box h4{
-color:#0b6b36;
-margin-bottom:15px;
+.retrait{
+    background:white;
+    border:1px solid #eee;
+    border-radius:20px;
+    padding:20px;
+}
+
+.retrait h2{
+    color:#008f3d;
 }
 
 label{
-display:block;
-margin-top:15px;
-margin-bottom:5px;
-font-weight:600;
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+    font-weight:bold;
 }
 
-input{
-width:100%;
-padding:12px;
-border:1px solid #ddd;
-border-radius:10px;
+select,input{
+    width:100%;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:15px;
+    box-sizing:border-box;
 }
 
 button{
-width:100%;
-padding:14px;
-margin-top:20px;
-border:none;
-background:#0b6b36;
-color:white;
-border-radius:10px;
-font-size:16px;
-font-weight:600;
-}
-
-.message{
-background:#ffeaea;
-padding:15px;
-border-radius:10px;
-margin-top:15px;
-color:#c00;
-}
-
-.footer{
-text-align:center;
-margin-top:20px;
-color:#666;
+    width:100%;
+    padding:15px;
+    margin-top:20px;
+    border:none;
+    border-radius:15px;
+    background:#00a83d;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
 }
 </style>
 </head>
 
 <body>
 
-<div class="phone">
+<div class="container">
 
-<div class="top">
-<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
-<h1>Nanocredi Devis</h1>
+<div class="logo">
+    <h2>Nanocredi Afrique</h2>
 </div>
 
-<div class="card">
-<p>Bine ai venit</p>
-<h2 id="clientNom">MORARU NICOLAE</h2>
-<p>Sold disponibil</p>
-<h2 id="clientSolde">500 000 EUR</h2>
+<div class="card-solde">
+    <p>Bienvenue</p>
+    <h1>DIBY KOUAME</h1>
+    <p>Solde disponible</p>
+    <h1>300.000 FCFA</h1>
 </div>
 
-<div class="box">
+<div class="bienvenue">
+    <h1>Bienvenue 👋</h1>
+    <p>Bienvenue sur votre espace Nanocredi Afrique</p>
+</div>
 
-<h4>Transfer către un cont bancar</h4>
+<div class="retrait">
+    <h2>Retrait</h2>
 
-<label>Numele beneficiarului</label>
-<input id="nom" type="text" placeholder="Introduceți numele">
+    <label>Moyen de retrait</label>
+    <select>
+        <option>MTN Mobile Money</option>
+        <option>Moov Money</option>
+        <option>Orange Money</option>
+    </select>
 
-<label>IBAN-ul beneficiarului</label>
-<input id="iban" type="text" placeholder="Introduceți IBAN-ul">
+    <label>Numéro Mobile Money</label>
+    <input type="text" placeholder="Entrez votre numéro">
 
-<label>Numele băncii</label>
-<input id="banca" type="text" placeholder="Introduceți banca">
+    <label>Montant à retirer</label>
+    <input type="number" placeholder="Entrez le montant">
 
-<label>Cod SWIFT / BIC</label>
-<input id="swift" type="text" placeholder="Introduceți codul">
-
-<label>Suma de transferat (EUR)</label>
-
-<input
-type="number"
-id="montant"
-oninput="convertir()"
-placeholder="Introduceți suma">
-
-<label>Suma convertita (MDL)</label>
-
-<input
-type="text"
-id="mdl"
-readonly>
-
-<button type="button" onclick="transferer()">
-Efectuați transferul
-</button>
-
-<div id="rezultat"></div>
-
-<div class="message">
-<h5>Nu sunteți autorizat</h5>
-<p>Vă rugăm să contactați directorul băncii dumneavoastră.</p>
+    <button>Effectuer le retrait</button>
 </div>
 
 </div>
 
-<div class="footer">
-Nanocredi Devis © 2026
-</div>
-
-</div>
-<script>
-
-function convertir() {
-
-let montant = document.getElementById("montant").value;
-
-if (montant == "") {
-document.getElementById("mdl").value = "";
-return;
-}
-
-let resultat = montant * 19.5;
-
-document.getElementById("mdl").value =
-resultat + " MDL";
-
-}
-
-function transferer() {
-
-let nume = document.getElementById("nom").value;
-let iban = document.getElementById("iban").value;
-let banca = document.getElementById("banca").value;
-let swift = document.getElementById("swift").value;
-let mdl = document.getElementById("mdl").value;
-
-document.getElementById("rezultat").innerHTML = `
-
-<div style="background:#f3f3f3;padding:15px;border-radius:10px;margin-top:15px;">
-
-<h3 style="color:green;">Transfer pregătit</h3>
-
-<p><b>Beneficiar:</b> ${nume}</p>
-
-<p><b>IBAN:</b> ${iban}</p>
-
-<p><b>Banca:</b> ${banca}</p>
-
-<p><b>SWIFT:</b> ${swift}</p>
-
-<p><b>Suma:</b> ${mdl}</p>
-
-<button onclick="valideaza()"
-style="margin-top:15px;padding:12px;width:100%;background:#0b6b36;color:white;border:none;border-radius:10px;">
-
-Validează
-
-</button>
-
-<div id="confirmare"></div>
-
-</div>
-
-`;
-
-}
-
-function valideaza() {
-
-document.getElementById("confirmare").innerHTML = `
-
-<div style="background:#ffeaea;padding:15px;border-radius:10px;margin-top:15px;color:#c00;">
-
-<h4>Nu sunteți încă autorizat să efectuați tranzacția.</h4>
-
-<p>Vă rugăm să contactați directorul băncii.</p>
-
-</div>
-
-`;
-
-}
-
-
-const params = new URLSearchParams(window.location.search);
-
-const nomClient =
-params.get("nom") || "MORARU NICOLAE";
-
-const solde =
-params.get("solde") || "500 000 EUR";
-
-document.getElementById("clientNom").innerText =
-nomClient;
-
-document.getElementById("clientSolde").innerText =
-solde;
-
-</script>
 </body>
 </html>
