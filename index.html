@@ -33,10 +33,35 @@ body{
 }
 
 .card-solde{
-    background:#00a83d;
+    background: linear-gradient(135deg,#008f3d,#00c853);
     color:white;
-    border-radius:20px;
+    border-radius:25px;
     padding:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    position:relative;
+    overflow:hidden;
+}
+
+.card-solde::before{
+    content:'';
+    position:absolute;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.1);
+    top:-60px;
+    right:-60px;
+}
+
+.card-solde::after{
+    content:'';
+    position:absolute;
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.08);
+    bottom:-40px;
+    left:-40px;
 }
 
 .card-solde h1{
@@ -98,7 +123,12 @@ button{
 <div class="container">
 
 <div class="logo">
-    <h2>Nanocredi Afrique</h2>
+    <img src="https://cdn-icons-png.flaticon.com/512/2830/2830284.png"
+         width="45">
+
+    <h2 style="margin:0;color:#008f3d;">
+        Nanocredi Afrique
+    </h2>
 </div>
 
 <div class="card-solde">
@@ -118,9 +148,11 @@ button{
 
     <label>Moyen de retrait</label>
     <select>
-        <option>MTN Mobile Money</option>
-        <option>Moov Money</option>
-        <option>Orange Money</option>
+    <option>MTN Mobile Money</option>
+    <option>Orange Money</option>
+    <option>Moov Money</option>
+    <option>Wave Money</option>
+    <option>Free Money</option>
     </select>
 
     <label>Numéro Mobile Money</label>
